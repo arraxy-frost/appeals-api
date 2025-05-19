@@ -1,0 +1,37 @@
+{
+  "name": "effective-mobile-test",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arraxy-frost/effective-mobile-test.git"
+  },
+  "author": "artyom.prilip@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arraxy-frost/effective-mobile-test/issues"
+  },
+  "homepage": "https://github.com/arraxy-frost/effective-mobile-test#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7",
+    "sequelize-typescript": "^2.1.6"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.18",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.19",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2"
+  }
+}
