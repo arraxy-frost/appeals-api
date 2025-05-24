@@ -1,12 +1,10 @@
-import express, { Express, Request, Response } from "express";
+import express from "express";
+import appealsRouter from "./routes/appeals";
 
-const app: Express = express();
+const app = express();
 
+app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-  res.json({
-      status: 'Server is up!'
-  });
-});
+app.use('/api/appeals', appealsRouter);
 
 export default app;

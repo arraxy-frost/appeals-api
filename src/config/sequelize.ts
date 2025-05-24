@@ -24,10 +24,10 @@ async function initDB() {
         await sequelize.authenticate();
         console.log('Connection to DB has been established successfully.');
 
-        if (process.env.NODE_ENV === 'development') {
-            await sequelize.sync({ alter: true });
-            console.log('Database synchronized with models.');
-        }
+        // if (process.env.NODE_ENV === 'development') {
+        //     await sequelize.sync({ alter: true });
+        //     console.log('Database synchronized with models.');
+        // }
 
         return sequelize;
     }

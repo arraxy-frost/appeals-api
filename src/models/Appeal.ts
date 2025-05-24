@@ -1,8 +1,8 @@
 import { Column, DataType, Model, Table } from "sequelize-typescript";
-import { RequestStatus } from "../shared/enums/RequestStatus";
+import { AppealStatus } from "../shared/enums/AppealStatus";
 
-@Table({ tableName: 'requests' })
-export class Request extends Model {
+@Table({ tableName: 'appeals' })
+export class Appeal extends Model {
     @Column({
         type: DataType.INTEGER,
         primaryKey: true,
@@ -13,7 +13,7 @@ export class Request extends Model {
     @Column({
         type: DataType.STRING,
         allowNull: false,
-        defaultValue: 'Request title',
+        defaultValue: 'Appeal title',
         validate: {
             notEmpty: true,
             len: [3, 255]
@@ -31,13 +31,13 @@ export class Request extends Model {
     text!: string;
 
     @Column({
-        type: DataType.ENUM(...Object.values(RequestStatus)),
+        type: DataType.ENUM(...Object.values(AppealStatus)),
         allowNull: false,
-        defaultValue: RequestStatus.NEW,
+        defaultValue: AppealStatus.NEW,
         validate: {
             notEmpty: true,
-            isIn: [Object.values(RequestStatus)],
+            isIn: [Object.values(AppealStatus)],
         }
     })
-    status!: RequestStatus;
+    status!: AppealStatus;
 }
