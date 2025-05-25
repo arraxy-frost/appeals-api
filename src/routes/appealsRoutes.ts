@@ -1,5 +1,5 @@
 import express, { Router } from "express";
-import * as appealsController from "../controllers/appeals";
+import * as appealsController from "../controllers/appealsController";
 
 const router: Router = express.Router();
 

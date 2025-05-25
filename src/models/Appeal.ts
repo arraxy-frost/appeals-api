@@ -28,7 +28,19 @@ export class Appeal extends Model {
             notEmpty: true,
         }
     })
-    text!: string;
+    description!: string;
+
+    @Column({
+        type: DataType.TEXT,
+        allowNull: true,
+    })
+    completionComment!: string;
+
+    @Column({
+        type: DataType.TEXT,
+        allowNull: true,
+    })
+    cancellingComment!: string;
 
     @Column({
         type: DataType.ENUM(...Object.values(AppealStatus)),

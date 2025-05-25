@@ -1,9 +1,9 @@
 import dotenv from 'dotenv';
-import {Sequelize} from "sequelize-typescript";
+import { Sequelize } from "sequelize-typescript";
 
 dotenv.config();
 
-const sequelize = new Sequelize(
+const sequelize: Sequelize = new Sequelize(
     process.env.DB_NAME!,
     process.env.DB_USER!,
     process.env.DB_PASS!,
@@ -24,10 +24,10 @@ async function initDB() {
         await sequelize.authenticate();
         console.log('Connection to DB has been established successfully.');
 
-        // if (process.env.NODE_ENV === 'development') {
-        //     await sequelize.sync({ alter: true });
-        //     console.log('Database synchronized with models.');
-        // }
+        if (process.env.NODE_ENV === 'development') {
+            await sequelize.sync({ alter: true });
+            console.log('Database synchronized with models.');
+        }
 
         return sequelize;
     }
